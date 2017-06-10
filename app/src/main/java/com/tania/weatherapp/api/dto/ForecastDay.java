@@ -2,30 +2,32 @@ package com.tania.weatherapp.api.dto;
 
 import com.google.gson.annotations.SerializedName;
 
-public class ForecastDay {
-    Temperature high;
-    Temperature low;
-    String conditions;
-    String icon;
-    String title;
-    String fcttext;
-    String fcttext_metric;
-    ForecastDate date;
+import java.io.Serializable;
 
-    public class ForecastDate {
-        String epoch;
+public class ForecastDay implements Serializable {
+    public Temperature high;
+    public Temperature low;
+    public String conditions;
+    public String icon;
+    public String title;
+    public String fcttext;
+    public String fcttext_metric;
+    public ForecastDate date;
+
+    public class ForecastDate implements Serializable {
+        public String epoch;
         @SerializedName("monthname")
-        String monthName;
+        public String monthName;
         @SerializedName("monthname_short")
-        String monthNameShort;
+        public String monthNameShort;
         @SerializedName("weekday_short")
-        String weekdayShort;
-        String weekday;
+        public String weekdayShort;
+        public String weekday;
     }
 
-    public class Temperature {
-        String fahrenheit;
-        String celsius;
+    public class Temperature implements Serializable {
+        public String fahrenheit;
+        public String celsius;
     }
 }
 

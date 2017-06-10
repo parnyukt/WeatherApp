@@ -8,4 +8,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TextTitle" parent="@android:style/TextAppearance.Large">
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
+    <style name="TextSubtitle" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
+    <style name="TextSubtitleSmall" parent="@android:style/TextAppearance.Small">
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
 </resources>

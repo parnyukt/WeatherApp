@@ -1,6 +1,6 @@
 package com.tania.weatherapp.di;
 
-import com.tania.weatherapp.MainActivity;
+import com.tania.weatherapp.view.MainActivity;
 
 import javax.inject.Singleton;
 

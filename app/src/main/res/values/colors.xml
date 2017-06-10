@@ -3,4 +3,28 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="action_bar_background">#d940b985</color>
+    <color name="navigator_body">#EEEEEE</color>
+    <color name="navigation_separator">#DEDEDE</color>
+    <color name="text_color">@android:color/black</color>
+    <color name="subtext_color">#B2CDCE</color>
+    <color name="white_50">#80FFFFFF</color>
+    <color name="white_10">#1AFFFFFF</color>
+    <color name="white_20">#33FFFFFF</color>
+    <color name="item_background">#CC1D3442</color>
+
+
+    <color name="text_color_counter">#0081AD</color>
+    <color name="border">#8ACCE3</color>
+    <color name="divider">#0DFFFFFF</color>
+    <color name="fill_color">#00A3DA</color>
+    <color name="pager_color">#80FFFFFF</color>
+
+
+    <color name="splash_from_color">#ee6020</color>
+    <color name="splash_to_color">#f9ae36</color>
+
+    <color name="widget_background">#40b985</color>
+
 </resources>

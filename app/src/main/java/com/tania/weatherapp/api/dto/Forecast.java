@@ -2,18 +2,27 @@ package com.tania.weatherapp.api.dto;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Forecast {
+public class Forecast implements Serializable { //todo: Parselable??
     RootForecast forecast;
 
-    public class RootForecast {
+    public ForecastDay getTodayForecast() {
+        return forecast.simpleForecast.forecastDayList.get(0);
+    }
+
+    public List<ForecastDay> getForecastList() {
+        return forecast.simpleForecast.forecastDayList;
+    }
+
+    public class RootForecast implements Serializable {
         @SerializedName("simpleforecast")
         SimpleForecast simpleForecast;
     }
 
-    public class SimpleForecast {
+    public class SimpleForecast implements Serializable {
         @SerializedName("forecastday")
-        List<ForecastDay> forecastDay;
+        List<ForecastDay> forecastDayList;
     }
 }
