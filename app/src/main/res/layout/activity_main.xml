@@ -9,20 +9,19 @@
             type="com.tania.weatherapp.api.dto.ForecastDay" />
     </data>
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <Spinner
             android:id="@+id/spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp" />
+            android:layout_margin="@dimen/margin_large" />
 
         <include
             layout="@layout/view_forecast_today"
             app:forecast="@{forecast}" />
 
-    </LinearLayout>
+    </FrameLayout>
 </layout>

@@ -12,8 +12,8 @@ public class Forecast implements Serializable { //todo: Parselable??
         return forecast.simpleForecast.forecastDayList.get(0);
     }
 
-    public List<ForecastDay> getForecastList() {
-        return forecast.simpleForecast.forecastDayList;
+    public List<ForecastDay> getForecastList(int daysCount) {
+        return forecast.simpleForecast.forecastDayList.subList(0, daysCount);
     }
 
     public class RootForecast implements Serializable {

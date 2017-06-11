@@ -9,6 +9,7 @@ public class ForecastDay implements Serializable {
     public Temperature low;
     public String conditions;
     public String icon;
+    public String icon_url;
     public String title;
     public String fcttext;
     public String fcttext_metric;
