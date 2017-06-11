@@ -3,8 +3,8 @@ package com.tania.weatherapp.view;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.tania.weatherapp.api.dto.ForecastDay;
 import com.tania.weatherapp.databinding.ViewForecastItemBinding;
+import com.tania.weatherapp.viewmodel.ForecastItemViewModel;
 
 public class ForecastItemViewHolder extends RecyclerView.ViewHolder {
 
@@ -16,7 +16,7 @@ public class ForecastItemViewHolder extends RecyclerView.ViewHolder {
         mBinding = ViewForecastItemBinding.bind(itemView);
     }
 
-    public void bind(ForecastDay model) {
-        mBinding.setForecast(model);
+    public void bind(ForecastItemViewModel collectionViewModel) {
+        mBinding.setVm(collectionViewModel);
     }
 }

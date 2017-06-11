@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import com.tania.weatherapp.R;
 import com.tania.weatherapp.api.dto.ForecastDay;
+import com.tania.weatherapp.viewmodel.ForecastItemViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +31,7 @@ public class ForecastAdapter extends RecyclerView.Adapter<ForecastItemViewHolder
 
     @Override
     public void onBindViewHolder(ForecastItemViewHolder holder, int position) {
-        holder.bind(forecastDays.get(position));
+        holder.bind(ForecastItemViewModel.from(forecastDays.get(position)));
     }
 
     @Override

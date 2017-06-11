@@ -15,6 +15,7 @@ import com.tania.weatherapp.WeatherApp;
 import com.tania.weatherapp.api.IWeatherApi;
 import com.tania.weatherapp.api.dto.Forecast;
 import com.tania.weatherapp.databinding.ActivityMainBinding;
+import com.tania.weatherapp.viewmodel.ForecastItemViewModel;
 
 import javax.inject.Inject;
 
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private Spinner citySpinner;
     private Forecast currentForecast;
+    private String currentCity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +40,6 @@ public class MainActivity extends AppCompatActivity {
         setCitySpinnerData();
 
         WeatherApp.getAppComponent().inject(this);
-
-
     }
 
     public void setCitySpinnerData() {
@@ -52,7 +52,8 @@ public class MainActivity extends AppCompatActivity {
         citySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                getForecast(citySpinner.getItemAtPosition(position).toString());
+                currentCity = citySpinner.getItemAtPosition(position).toString();
+                getForecast(currentCity);
             }
 
             @Override
@@ -70,10 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 if (response.body() == null) return;
 
                 currentForecast = response.body();
-                Log.i("forecast", currentForecast.toString());
-
-                // todo update forecast view
-                binding.setForecast(currentForecast.getTodayForecast());
+                binding.todayForecast.setVm(ForecastItemViewModel.from(currentForecast.getTodayForecast()));
             }
 
             @Override
@@ -85,6 +83,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showDetails(View view) {
-        DetailsActivity.start(this, currentForecast);
+        DetailsActivity.start(this, currentForecast, currentCity);
     }
 }

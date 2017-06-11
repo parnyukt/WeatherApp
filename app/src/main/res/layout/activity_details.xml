@@ -4,8 +4,8 @@
     <data>
 
         <variable
-            name="forecast"
-            type="com.tania.weatherapp.api.dto.ForecastDay" />
+            name="vm"
+            type="com.tania.weatherapp.viewmodel.DetailsForecastViewModel" />
     </data>
 
     <LinearLayout
@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Kharkiv" />
+            android:text="@{vm.city}" />
 
         <TextView
             style="@style/TextSubtitle"

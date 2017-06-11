@@ -27,8 +27,8 @@ public class ForecastDay implements Serializable {
     }
 
     public class Temperature implements Serializable {
-        public String fahrenheit;
-        public String celsius;
+        public String fahrenheit = "";
+        public String celsius = "";
     }
 }
 

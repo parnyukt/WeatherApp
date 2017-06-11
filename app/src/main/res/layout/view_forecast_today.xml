@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
         <variable
-            name="forecast"
-            type="com.tania.weatherapp.api.dto.ForecastDay" />
+            name="vm"
+            type="com.tania.weatherapp.viewmodel.ForecastItemViewModel" />
     </data>
 
     <LinearLayout
@@ -19,6 +18,13 @@
         android:onClick="showDetails"
         android:orientation="vertical">
 
+        <TextView
+            style="@style/TextTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:text="@{@string/today(vm.weekDay)}" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,7 +35,7 @@
                 android:layout_height="26dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginRight="@dimen/margin_medium"
-                app:gifUrl="@{forecast.icon_url}" />
+                app:gifUrl="@{vm.iconUrl}" />
 
             <TextView
                 android:id="@+id/weather_title"
@@ -37,7 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                app:text="@{forecast.conditions}" />
+                app:text="@{vm.conditions}" />
 
 
         </LinearLayout>
@@ -48,9 +54,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_medium"
-            android:text="0 &#176;"
+            android:text=""
             android:textSize="85sp"
-            app:text="@{forecast.high.celsius}" />
+            app:text="@{@string/weather_degree(vm.highTemp)}" />
 
 
         <LinearLayout
@@ -64,8 +70,8 @@
                 style="@style/TextSubtitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="0 &#176;"
-                app:text="@{forecast.high.celsius}" />
+                android:text=""
+                app:text="@{@string/weather_degree(vm.highTemp)}" />
 
             <TextView
                 android:id="@+id/weather_temp_min"
@@ -73,19 +79,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/margin_medium"
-                android:text="0 &#176;"
-                app:text="@{forecast.low.celsius}" />
+                android:text=""
+                app:text="@{@string/weather_degree(vm.lowTemp)}" />
 
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/weather_city_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:textSize="19sp"
-            tools:text="Vinnitsa, Ukraine" />
 
     </LinearLayout>
 </layout>
